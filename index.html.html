@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fusion Vision — ICS 2026'da Görüşelim</title>
+<meta name="description" content="TCG kartlarını 1 saniyede tara, anlık fiyatını gör. Istanbul Card Show 2026'da standımızda 14 gün ücretsiz Pro." />
+
+<!-- Open Graph (sosyal medya paylaşımları için) -->
+<meta property="og:title" content="Fusion Vision — ICS 2026'da Görüşelim" />
+<meta property="og:description" content="Kartını göster. Fiyatını gör. 1 saniye. Istanbul Card Show 2026, 2-3 Mayıs." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fusionvision.app/ics2026" />
+<!-- <meta property="og:image" content="https://fusionvision.app/og-image.png" /> BURAYA KENDİ OG GÖRSELİNİ EKLE -->
+
+<style>
+/* ========= RESET & BASE ========= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  background: #0a0a0a;
+  color: #eaeaea;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ========= CONTAINER ========= */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ========= NAV ========= */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 0;
+}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 800; font-size: 18px; letter-spacing: -0.3px; }
+.logo span { color: #FF5F1F; }
+.nav-cta {
+  background: #FF5F1F; color: #0a0a0a;
+  padding: 10px 18px; border-radius: 8px;
+  font-weight: 700; font-size: 14px;
+  transition: transform 0.15s ease;
+}
+.nav-cta:hover { transform: translateY(-1px); }
+
+/* ========= HERO ========= */
+.hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255, 95, 31, 0.12) 0%, transparent 60%);
+  z-index: 0;
+}
+.hero-inner { position: relative; z-index: 1; text-align: center; }
+.badge {
+  display: inline-block;
+  background: rgba(255, 95, 31, 0.12);
+  border: 1px solid rgba(255, 95, 31, 0.35);
+  color: #FF8F4F;
+  padding: 8px 16px; border-radius: 99px;
+  font-size: 13px; font-weight: 600; margin-bottom: 28px;
+}
+h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #a8a8a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: #9a9a9a; max-width: 620px; margin: 0 auto 36px;
+}
+.cta-row {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.btn {
+  padding: 16px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; gap: 10px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+.btn-primary {
+  background: #FF5F1F; color: #0a0a0a;
+  box-shadow: 0 8px 24px rgba(255, 95, 31, 0.25);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255, 95, 31, 0.35); }
+.btn-secondary {
+  background: transparent; color: #eaeaea;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.btn-secondary:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.04); }
+
+.trust {
+  display: flex; gap: 18px; justify-content: center;
+  font-size: 13px; color: #777; flex-wrap: wrap;
+}
+
+/* Hero video placeholder */
+.hero-media {
+  margin-top: 60px;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #151515 0%, #1f1f1f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: #555; font-size: 14px;
+  max-width: 900px; margin-left: auto; margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+.hero-media::after {
+  content: "🎥 BURAYA 30 SANİYELİK DEMO VİDEO (loop, sessiz autoplay)";
+  position: absolute;
+  padding: 12px 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* ========= SECTIONS ========= */
+section { padding: 80px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); }
+.section-title {
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.section-sub {
+  color: #9a9a9a; font-size: 17px; margin-bottom: 48px; max-width: 600px;
+}
+
+/* ========= ICS OFFER ========= */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; margin-bottom: 40px;
+}
+.offer-card {
+  background: linear-gradient(180deg, #161616 0%, #0f0f0f 100%);
+  border: 1px solid rgba(255, 95, 31, 0.2);
+  border-radius: 14px; padding: 28px;
+  transition: border-color 0.2s ease;
+}
+.offer-card:hover { border-color: rgba(255, 95, 31, 0.45); }
+.offer-icon { font-size: 28px; margin-bottom: 14px; }
+.offer-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.offer-card p { color: #9a9a9a; font-size: 15px; }
+
+/* ========= HOW IT WORKS ========= */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.step {
+  padding: 28px; background: #111; border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.step-num {
+  font-size: 14px; font-weight: 700; color: #FF5F1F; margin-bottom: 12px;
+}
+.step h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+.step p { color: #9a9a9a; font-size: 15px; }
+
+/* ========= COMPARISON TABLE ========= */
+.compare-wrap { overflow-x: auto; margin-top: 30px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 600px; }
+th, td { text-align: left; padding: 16px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+th { background: #161616; font-weight: 700; font-size: 14px; color: #bbb; }
+td.us { color: #FF5F1F; font-weight: 700; background: rgba(255, 95, 31, 0.05); }
+.promise {
+  margin-top: 30px; padding: 22px;
+  background: rgba(255, 95, 31, 0.06);
+  border-left: 3px solid #FF5F1F;
+  border-radius: 6px; color: #d0d0d0;
+}
+
+/* ========= PRICING ========= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.price-card {
+  background: #111; border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px; padding: 32px 26px;
+  position: relative;
+}
+.price-card.popular {
+  border-color: #FF5F1F;
+  box-shadow: 0 0 0 3px rgba(255, 95, 31, 0.12);
+}
+.popular-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: #FF5F1F; color: #0a0a0a;
+  padding: 5px 14px; border-radius: 99px;
+  font-size: 12px; font-weight: 700;
+}
+.price-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+.price {
+  font-size: 34px; font-weight: 800; margin-bottom: 20px;
+}
+.price small { font-size: 14px; color: #9a9a9a; font-weight: 500; }
+.price-card ul { list-style: none; margin-bottom: 28px; }
+.price-card li {
+  padding: 8px 0; color: #c0c0c0; font-size: 15px;
+  padding-left: 24px; position: relative;
+}
+.price-card li::before {
+  content: "✓"; position: absolute; left: 0; color: #FF5F1F; font-weight: 700;
+}
+.price-cta {
+  display: block; text-align: center; padding: 14px;
+  border-radius: 8px; font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  color: #eaeaea; transition: background 0.2s ease;
+}
+.price-cta:hover { background: rgba(255, 255, 255, 0.12); }
+.price-card.popular .price-cta { background: #FF5F1F; color: #0a0a0a; }
+.price-card.popular .price-cta:hover { background: #ff7540; }
+.ics-note {
+  text-align: center; margin-top: 30px; color: #FF8F4F; font-size: 14px;
+}
+
+/* ========= FOUNDER ========= */
+.founder-block {
+  background: #111; border-radius: 16px; padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.founder-block p { color: #c0c0c0; font-size: 17px; margin-bottom: 18px; }
+.founder-block p:last-child { margin-bottom: 0; }
+
+/* ========= FAQ ========= */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 22px 0;
+}
+.faq-q {
+  font-weight: 700; font-size: 17px; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: "+"; font-size: 24px; color: #FF5F1F; font-weight: 300;
+  transition: transform 0.2s ease;
+}
+details[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  color: #9a9a9a; padding-top: 14px; font-size: 15px; line-height: 1.7;
+}
+
+/* ========= FINAL CTA ========= */
+.final-cta {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.final-box {
+  padding: 40px 32px; border-radius: 16px; text-align: center;
+}
+.final-box.a { background: linear-gradient(135deg, #FF5F1F 0%, #e64a10 100%); color: #0a0a0a; }
+.final-box.b { background: #111; border: 1px solid rgba(255, 255, 255, 0.08); }
+.final-box h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+.final-box p { margin-bottom: 22px; opacity: 0.9; }
+.final-box .btn {
+  background: #0a0a0a; color: #FF5F1F;
+  display: inline-block;
+}
+.final-box.b .btn { background: #FF5F1F; color: #0a0a0a; }
+
+/* ========= EMAIL FORM ========= */
+.email-form {
+  display: flex; gap: 10px; margin-top: 10px; max-width: 440px; margin-left: auto; margin-right: auto;
+}
+.email-form input {
+  flex: 1; padding: 13px 16px; border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #1a1a1a; color: #eaeaea; font-size: 14px;
+  font-family: inherit;
+}
+.email-form input:focus { outline: none; border-color: #FF5F1F; }
+.email-form button {
+  padding: 13px 22px; background: #FF5F1F; color: #0a0a0a;
+  border: none; border-radius: 8px; font-weight: 700; cursor: pointer;
+  font-family: inherit;
+}
+
+/* ========= FOOTER ========= */
+footer {
+  padding: 50px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #777; font-size: 14px;
+}
+.footer-inner {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.footer-links a { color: #aaa; margin-left: 20px; }
+.footer-links a:hover { color: #FF5F1F; }
+
+/* ========= MOBILE ========= */
+@media (max-width: 640px) {
+  .hero { padding: 60px 0 40px; }
+  section { padding: 60px 0; }
+  .cta-row { flex-direction: column; }
+  .cta-row .btn { width: 100%; justify-content: center; }
+  .footer-inner { flex-direction: column; }
+  .footer-links a { margin-left: 0; margin-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========= NAV ========= -->
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Fusion <span>Vision</span></div>
+    <a href="#indir" class="nav-cta">İndir</a>
+  </div>
+</nav>
+
+<!-- ========= HERO ========= -->
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="badge">🎪 ICS 2026 · 2–3 Mayıs · Lütfi Kırdar · Ana Sahne</div>
+    <h1>Kartını göster.<br>Fiyatını gör. 1 saniye.</h1>
+    <p class="hero-sub">
+      Fusion Vision, TCG kartlarını kameranla taratır, anlık piyasa fiyatını getirir. Pokémon, Magic, Yu-Gi-Oh, One Piece, Lorcana — hepsi tek uygulamada.
+    </p>
+    <div class="cta-row">
+      <a href="#indir" class="btn btn-primary">📱 App Store'dan İndir</a>
+      <a href="#email" class="btn btn-secondary">Fuarda görüşelim →</a>
+    </div>
+    <div class="trust">
+      <span>⭐ 4.X App Store</span>
+      <span>🇹🇷 Türkiye'de geliştirildi</span>
+      <span>🔒 Reklamsız, veri satılmaz</span>
+    </div>
+
+    <!-- HERO VIDEO / DEMO -->
+    <div class="hero-media">
+      <!-- 
+      NOT: Bu div içine demo videonu koy. Örnek:
+      <video autoplay loop muted playsinline>
+        <source src="demo.mp4" type="video/mp4">
+      </video>
+      -->
+    </div>
+  </div>
+</header>
+
+<!-- ========= ICS OFFER ========= -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Fuardan bir şey götürmeni istiyoruz.</h2>
+    <p class="section-sub">Istanbul Card Show 2026'da standımıza gelen herkese üç şey:</p>
+
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="offer-icon">🎟️</div>
+        <h3>14 Gün Ücretsiz Pro</h3>
+        <p>Stantta QR kodu okut, trial başlasın. Sınırsız tarama, bulut senkronizasyonu, detaylı portföy analizi — hepsi açık.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">🖨️</div>
+        <h3>Özel 3D Tarama Standı</h3>
+        <p>Kendi tasarladığımız stantla 100 kartı 2 dakikada tara. Stantta sınırlı sayıda, beğenirsen yanında götür.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">🏆</div>
+        <h3>Speed Scanner Yarışması</h3>
+        <p>20 kartı en hızlı tarayan, derecelendirilmiş nadir bir kart kazanır. Leaderboard stantta canlı.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= HOW IT WORKS ========= -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Her şey 3 adım.</h2>
+    <p class="section-sub">Teknik kurulum yok, ayar yok. Aç, tara, gör.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Tara</h3>
+        <p>Telefonu kartın üstüne tut. Özel ışıklandırma gerekmiyor, masa lambası yeter.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Tanı</h3>
+        <p>Smart Match algoritması kartı 1 saniyede tanır — yıpranmışsa, farklı dildeyse, foil'se bile.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Değer Al</h3>
+        <p>TCGplayer'dan canlı fiyat. Koleksiyonuna ekle, toplam değer anlık görünsün.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= COMPARISON ========= -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Neden Fusion Vision?</h2>
+    <p class="section-sub">Mevcut uygulamalar koleksiyoncu için değil, pazaryeri veya yatırımcı için yapıldı. Biz farklıyız.</p>
+
+    <div class="compare-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Fusion Vision</th>
+            <th>TCGplayer App</th>
+            <th>Collectr</th>
+            <th>Eyevo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Tarama hızı</td><td class="us">~1 sn</td><td>2+ sn</td><td>Manuel</td><td>0.8 sn</td></tr>
+          <tr><td>Çoklu TCG desteği</td><td class="us">5+ oyun</td><td>✓</td><td>25+</td><td>Sadece Pokémon</td></tr>
+          <tr><td>3D Stant desteği</td><td class="us">Özel tasarım</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Reklamsız</td><td class="us">✓</td><td>—</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Türkçe + ₺ desteği</td><td class="us">✓</td><td>—</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="promise">
+      <strong>Söz:</strong> Verini satmıyoruz. Reklam göstermiyoruz. Arayüzü kirletmiyoruz. Ekran senin.
+    </div>
+  </div>
+</section>
+
+<!-- ========= PRICING ========= -->
+<section id="indir">
+  <div class="container">
+    <h2 class="section-title">Basit. Şeffaf.</h2>
+    <p class="section-sub">İstediğin an iptal et. Gizli ücret yok.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">₺0 <small>/ süresiz</small></div>
+        <ul>
+          <li>Günde 10 tarama</li>
+          <li>Temel envanter</li>
+          <li>Standart fiyat verisi</li>
+        </ul>
+        <a href="#" class="price-cta">Ücretsiz başla</a>
+      </div>
+
+      <div class="price-card popular">
+        <div class="popular-badge">EN POPÜLER</div>
+        <h3>Pro · Yıllık</h3>
+        <div class="price">₺1.199 <small>/ yıl</small></div>
+        <ul>
+          <li>Sınırsız tarama</li>
+          <li>Bulut senkronizasyonu</li>
+          <li>Detaylı portföy analizi</li>
+          <li>Deste değerleme</li>
+          <li>Öncelikli destek</li>
+        </ul>
+        <a href="#" class="price-cta">Pro'ya geç</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Pro · Haftalık</h3>
+        <div class="price">₺249 <small>/ hafta</small></div>
+        <ul>
+          <li>Tüm Pro özellikleri</li>
+          <li>Haftalık fatura</li>
+          <li>İstediğin an iptal</li>
+        </ul>
+        <a href="#" class="price-cta">Haftalık dene</a>
+      </div>
+    </div>
+
+    <p class="ics-note">🎟️ ICS 2026'dayız: Stantta QR kodu okut, ilk 14 gün bizden.</p>
+  </div>
+</section>
+
+<!-- ========= FOUNDER ========= -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Kim yapıyor?</h2>
+    <div class="founder-block">
+      <p>
+        Ben Alperen. İstanbul'dan. Kendim de TCG oynuyorum — aslında bu uygulama kendi koleksiyonumu yönetmek için başladı. Sonra oyun mağazalarına götürdüm, "bunu sat" dediler. Ekiple geliştirdik, test ettik, App Store'a çıkardık.
+      </p>
+      <p>
+        Fusion Vision bir büyük şirket projesi değil. Türkiye'den çıkan, dünyadaki TCG koleksiyonerine hizmet etmek isteyen küçük bir ekip. Feedback'ine her zaman açığız — <a href="mailto:hello@fusionvision.app" style="color:#FF5F1F">hello@fusionvision.app</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FAQ ========= -->
+<section>
+  <div class="container" style="max-width: 800px;">
+    <h2 class="section-title">Sık sorulanlar.</h2>
+
+    <details class="faq-item">
+      <summary class="faq-q">Hangi kart oyunlarını destekliyorsunuz?</summary>
+      <div class="faq-a">Pokémon, Magic: The Gathering, Yu-Gi-Oh!, One Piece, Lorcana. Yakında: Riftbound, Digimon, Flesh and Blood.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">Fiyatları nereden alıyorsunuz?</summary>
+      <div class="faq-a">TCGplayer API ve çoklu kaynaklar. Her tarama anlık piyasa verisi çeker.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">Android versiyonu ne zaman?</summary>
+      <div class="faq-a">2026 3. çeyrek hedefimiz. Fuarda tanıştığımız kullanıcılara ilk erişim verecek.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">LCS (oyun mağazaları) için toplu lisans var mı?</summary>
+      <div class="faq-a">Evet, B2B versiyonu üzerinde çalışıyoruz. İlgileniyorsan <a href="mailto:hello@fusionvision.app" style="color:#FF5F1F">bize yaz</a>, pilot programa dahil edelim.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">Verilerim nerede saklanıyor?</summary>
+      <div class="faq-a">Cihazında, ve (Pro'daysan) şifrelenmiş bulutumuzda. Üçüncü taraflara satmıyoruz.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">İptal edebilir miyim?</summary>
+      <div class="faq-a">Her an. App Store üzerinden tek tıkla, hiçbir soru sorulmaz.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ========= FINAL CTA ========= -->
+<section id="email">
+  <div class="container">
+    <h2 class="section-title">İki yol.</h2>
+    <p class="section-sub">Şimdi indir ya da fuarda bul — ikisi de ücretsiz başlıyor.</p>
+
+    <div class="final-cta">
+      <div class="final-box a">
+        <h3>Şimdi indir</h3>
+        <p>App Store'da ücretsiz. İlk 10 tarama bizden.</p>
+        <a href="#" class="btn">📱 App Store</a>
+      </div>
+      <div class="final-box b">
+        <h3>Fuarda bul</h3>
+        <p>2–3 Mayıs · Lütfi Kırdar · Stantta 14 günlük Pro bekliyor.</p>
+        <form class="email-form" onsubmit="return handleEmail(event)">
+          <input type="email" placeholder="email@örnek.com" required />
+          <button type="submit">Haber ver</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="logo" style="margin-bottom:8px;">Fusion <span>Vision</span></div>
+      <div>İstanbul · fusionvision.app</div>
+      <div style="margin-top:10px; font-size:12px;">© 2026 Orange Point Prodüksiyon Tasarım Stüdyosu</div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Discord</a>
+      <a href="#">Gizlilik</a>
+      <a href="mailto:hello@fusionvision.app">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Email form - backend'e bağlamadan önce basit bir placeholder
+function handleEmail(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value;
+  // BURAYA: Mailchimp/ConvertKit/Beehiiv entegrasyonu ekle
+  // Örnek: fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({email}) })
+  alert('Teşekkürler! Fuardan önce sana özel kod göndereceğiz: ' + email);
+  e.target.reset();
+  return false;
+}
+
+// Basit analytics event tracking (Plausible/Fathom/GA4 için hazır)
+document.querySelectorAll('.btn, .price-cta, .nav-cta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // BURAYA: gtag('event', 'cta_click', { label: btn.textContent });
+    console.log('CTA tıklandı:', btn.textContent.trim());
+  });
+});
+</script>
+
+</body>
+</html>
