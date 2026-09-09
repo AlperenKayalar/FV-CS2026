@@ -576,7 +576,8 @@ footer {
 // ICS 2026 Sonbahar: yüzey etiketi (?s=qr|flyer|ig|story|press|comm|reddit|yt) -> ct=ics26f-land-<s>
 (function () {
   var s = new URLSearchParams(location.search).get('s');
-  var allowed = ['qr', 'flyer', 'ig', 'story', 'press', 'comm', 'reddit', 'yt'];
+  // FV_Kampanya_Linkleri.md:44 yalnız beş değer tanımlıyor; tanımsız etiket ASC'de okunamaz satır üretir.
+  var allowed = ['qr', 'flyer', 'ig', 'press', 'comm'];
   if (!s || allowed.indexOf(s) === -1) return;
   document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
     a.href = a.href.replace(/ct=ics26f-land(?:-[a-z]+)?/, 'ct=ics26f-land-' + s);
